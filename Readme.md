@@ -15,7 +15,7 @@ The protocol defines two BLE characteristics:
 - [Transfer Message](#2-transfer-message)
 - [Download File from MOKUKU](#3-download-file-from-mokuku)
 - [Upload File to MOKUKU](#4-upload-file-to-mokuku)
-- [Demo](#6-demo)
+- [Demo](#6-demo) : **see more detailed doc in 'monitor_app' subfolder.**
 - [License](#license)
 
 # 1. Transfer Data
@@ -60,6 +60,19 @@ Used for **real-time dashboard updates**.
 | 53    | Right click        |
 | 66    | Left OTA update    |
 | 67    | Right OTA update   |
+
+⚠️ **Important Notice**:
+
+1. The system has **two independent chips**, each handling a separate screen:
+   * **Left chip** (user’s left) is also responsible for **BLE communication**.
+   * **Right chip** (user’s right) handles display or other processing tasks.
+2. **OTA updates must be performed in the correct order:**
+   * **First update the Right chip**, then update the Left chip.
+   * Reason: The Left chip manages BLE; if updated first, the OTA process may be interrupted or fail due to loss of BLE connectivity.
+3. Recommended precautions before OTA:
+   * Ensure both chips have sufficient power.
+   * Maintain a stable BLE connection.
+   * Avoid interacting with the screens during OTA.
 
 
 # 2. Transfer Message
@@ -327,7 +340,7 @@ The example shows how to:
 * send protocol commands
 
 The implementation is written in Python using Bleak, a cross-platform BLE library.
-
+**See more detailed doc in 'monitor_app' subfolder.**
 
 ## Create conda environment
 
