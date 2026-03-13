@@ -354,6 +354,10 @@ conda env create -f monitor_app/ble_ctrl_env.yaml
 python monitor_app/app.py
 ```
 
+| [Demo Video](./assets/mokuku_ble_demo_0.mp4)  | [Demo Video Raw](./assets/mokuku_ble_demo_1.mp4)           |
+| ------- | -------------------- |
+| <video src="https://github.com/user-attachments/assets/7ea8c529-6754-4a41-8ce0-084be0e38f3e">    | <video src="https://github.com/user-attachments/assets/c99fa5b1-677f-428a-a3d0-675f6aeb1d7c">  |
+
 
 # License
 

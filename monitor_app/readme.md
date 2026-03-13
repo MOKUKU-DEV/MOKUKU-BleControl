@@ -48,3 +48,9 @@ python monitor_app/app.py
    * Ensure both chips have sufficient power.
    * Maintain a stable BLE connection.
    * Avoid interacting with the screens during OTA.
+
+### Send Real Data
+
+Set `send_realtime_data = True` in "app.py" to send CPU and GPU usage to MOKUKU.
+* CPU usage will show at Velocity Panel.
+* GPU usage will show at GPU Panel.
