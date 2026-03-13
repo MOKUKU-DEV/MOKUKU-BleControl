@@ -49,8 +49,52 @@ python monitor_app/app.py
    * Maintain a stable BLE connection.
    * Avoid interacting with the screens during OTA.
 
-### Send Real Data
 
-Set `send_realtime_data = True` in "app.py" to send CPU and GPU usage to MOKUKU.
-* CPU usage will show at Velocity Panel.
-* GPU usage will show at GPU Panel.
+## Set MOKUKU as CPU/GPU usage monitor
+
+Follow these steps to display **CPU and GPU usage** on your MOKUKU device:
+
+✅ **Tips:** Make sure BLE connection is stable during upload.
+
+### 1️⃣ Enable Realtime Data
+
+In `app.py`, set:
+
+```python id="enable_realtime"
+send_realtime_data = True
+```
+
+* **CPU usage** will be displayed on the **Velocity Panel**.
+* **GPU usage** will be displayed on the **GPU Panel**.
+
+### 2️⃣ Upload Example Configuration
+
+(All the parameter are setup, you can directly click the button)
+
+1. Open `assets/config.txt` (or the path set in `ble_client.py` as `CONFIG_FILE_PATH`).
+2. Click the **Upload File** button to send it to MOKUKU.
+
+Example `config.txt` content:
+
+```text id="config_example"
+# Panel 1 (CPU)
+1, 44                # Clear all existing elements
+1, 40, 0, 100        # Set value range: 0–100
+1, 41, 0, 61, 60, CPU %  # Add CPU text element
+
+# Panel 2 (GPU)
+2, 44                # Clear all existing elements
+2, 40, 0, 100        # Set value range: 0–100
+2, 41, 0, -72, 48, gpu % # Add GPU text element
+```
+
+### 3️⃣ Reboot MOKUKU
+
+| Step | Video          |
+| ------- | -------------------- |
+| Disconnect and reconnect power to **reboot the device**.<br>Reconnect via BLE; MOKUKU will now display **your PC CPU and GPU data**.      | <video src="https://github.com/user-attachments/assets/a0e28482-c74e-4fdc-8506-c81567d8ea54">  |
+
+### 4️⃣ Recover MOKUKU (Reset Configuration)
+
+* To reset or recover MOKUKU, send an **empty `config.txt`** file.
+* This clears all custom panels and restores the default display.

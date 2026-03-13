@@ -30,7 +30,7 @@ from ble_client import BleClient, BleQtWidget
 from messager import messager
 from common.log import logging
 
-send_realtime_data = False
+send_realtime_data = True
 ble_client_widget = BleQtWidget("mokuku", send_realtime_data)
 MOKUKU_CONFIG_FILE_PATH = "/sd/config.txt"
 
