@@ -1,0 +1,12 @@
+build/*
+data
+build-cache
+uploads
+IDF_*/build*
+IDF_*/output
+IDF_*/managed_components
+*.ipynb_checkpoints
+*.old
+log.txt
+*__pycache__*
+*.log
