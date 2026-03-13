@@ -25,9 +25,9 @@ conda env create -f monitor_app/ble_ctrl_env.yaml
 python monitor_app/app.py
 ```
 
-| Demo | Demo          |
+| [Demo Video](../assets/mokuku_ble_demo_0.mp4)  | [Demo Video Raw](../assets/mokuku_ble_demo_1.mp4)           |
 | ------- | -------------------- |
-| [Watch Demo Video](../assets/mokuku_ble_demo_0.mp4)      | [Watch Demo Video](../assets/mokuku_ble_demo_1.mp4)  |
+| https://github.com/user-attachments/assets/f3e1ce54-ce9d-454e-a9f8-6804a5284c24   | https://github.com/user-attachments/assets/c99fa5b1-677f-428a-a3d0-675f6aeb1d7c  |
 
 ### OTA Update Commands
 
