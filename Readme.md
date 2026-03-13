@@ -9,7 +9,6 @@ The protocol defines two BLE characteristics:
 | Transfer Data    | `beb5483e-36e1-4688-b7f5-ea07361b26a8` | Real-time dashboard data                |
 | Transfer Message | `d222e154-1a80-4e71-9a63-2aa2c0ce0a8c` | Configuration / file / command messages |
 
----
 
 # 1. Transfer Data
 
@@ -27,7 +26,6 @@ Used for **real-time dashboard updates**.
 | 4    | RPM_B | Engine RPM (low byte or channel B)  |
 | 5    | GAS   | Throttle / gas pedal value          |
 
----
 
 ## Extended Packet Format (10 bytes)
 
@@ -55,7 +53,6 @@ Used for **real-time dashboard updates**.
 | 66    | Left OTA update    |
 | 67    | Right OTA update   |
 
----
 
 # 2. Transfer Message
 
@@ -63,7 +60,6 @@ Used for **real-time dashboard updates**.
 
 Used for **configuration, WiFi setup, file operations, and system commands**.
 
----
 
 ## WiFi Configuration
 
@@ -75,8 +71,6 @@ Used for **configuration, WiFi setup, file operations, and system commands**.
 | 2    | String length |
 | 3..N | WiFi name     |
 
----
-
 ### Set WiFi Password
 
 | Byte | Value         |
@@ -85,7 +79,6 @@ Used for **configuration, WiFi setup, file operations, and system commands**.
 | 2    | String length |
 | 3..N | WiFi password |
 
----
 
 ## File System Commands
 
@@ -97,7 +90,6 @@ Used for **configuration, WiFi setup, file operations, and system commands**.
 | 2    | String length         |
 | 3..N | Target directory path |
 
----
 
 ### SD Card Information
 
@@ -107,8 +99,6 @@ Returns **used space / total space**.
 | ---- |
 | `61` |
 
----
-
 ### Delete File
 
 | Byte | Value            |
@@ -117,7 +107,6 @@ Returns **used space / total space**.
 | 2    | String length    |
 | 3..N | Target file path |
 
----
 
 ## Direct Command
 
@@ -126,15 +115,12 @@ Returns **used space / total space**.
 | 1    | `1`        |
 | 2    | Command ID |
 
----
-
 ## Obtain Software Version
 
 | Byte |
 | ---- |
 | `3`  |
 
----
 
 # 3. Download File from MOKUKU
 
@@ -159,8 +145,6 @@ file_key (4 bytes)
 file_size (4 bytes)
 ```
 
----
-
 ### Step 2 — Request File Data
 
 Send:
@@ -180,8 +164,6 @@ data_size (1 byte)
 begin_position (4 bytes)
 data (n bytes)
 ```
-
----
 
 # 4. Upload File to MOKUKU
 
@@ -205,8 +187,6 @@ ret (1 byte)
 file_key (4 bytes)
 file_size = 0
 ```
-
----
 
 ### Step 2 — Send File Data
 
@@ -232,7 +212,6 @@ file_key (4 bytes)
 current_position (4 bytes)
 ```
 
----
 
 # 5. DIY Configuration File
 
@@ -240,7 +219,6 @@ Panels can be customized using a configuration file.
 
 Example: `assets/config.txt`
 
----
 
 ## Panel Types
 
@@ -258,8 +236,6 @@ PANEL_TYPE_TIME = 9
 PANEL_TYPE_MUSIC = 10
 ```
 
----
-
 ## Configuration Commands
 
 ### Hide Panel
@@ -274,8 +250,6 @@ Example
 1, 45
 ```
 
----
-
 ### Show Panel
 
 ```
@@ -287,8 +261,6 @@ Example
 ```
 1, 46
 ```
-
----
 
 ### Clear Panel Elements
 
@@ -302,8 +274,6 @@ Example
 1, 44
 ```
 
----
-
 ### Set Data Range (Velocity / RPM only)
 
 ```
@@ -316,7 +286,6 @@ Example
 1, 40, 0, 100
 ```
 
----
 
 ### Add Text Element
 
@@ -338,9 +307,6 @@ Available font sizes:
 28, 48, 60, 80, 120, 140, 160
 ```
 
----
-
 # License
 
 Licensed under the MIT License.
----
