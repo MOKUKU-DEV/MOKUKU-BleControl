@@ -9,6 +9,13 @@ The protocol defines two BLE characteristics:
 | Transfer Data    | `beb5483e-36e1-4688-b7f5-ea07361b26a8` | Real-time dashboard data                |
 | Transfer Message | `d222e154-1a80-4e71-9a63-2aa2c0ce0a8c` | Configuration / file / command messages |
 
+## Table of Contents
+
+- [Transfer Data](#1-transfer-data)
+- [Transfer Message](#2-transfer-message)
+- [Download File from MOKUKU](#3-download-file-from-mokuku)
+- [Upload File to MOKUKU](#4-upload-file-to-mokuku)
+- [License](#license)
 
 # 1. Transfer Data
 
